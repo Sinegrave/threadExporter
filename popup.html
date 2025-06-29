@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
+    <title>Atlas</title>
+    
+</head>
+<body>
+    <div id="popup-content">
+        <center>
+            Keep track of threads here!
+
+            <!-- List of characters -->
+             <br>
+             <br>
+             <button>Refresh</button> <button>Quick Add</button> <button>Edit Character(s)</button> 
+             <br>
+             <br>
+            <!-- Thread table -->
+             <div style="display: flex; flex-direction: column;">
+                <!-- Thread header -->
+                <div class="newThread">
+                    <div>Name</div>
+                    <div>Thread Title</div>
+                    <div>URL</div>
+                    <div>Your Turn / Their Turn</div>
+                    <div>Comment Total</div>
+                </div>
+                <!-- Thread header -->
+                <!-- New thread -->
+                <div class="newThread">
+                    <div class="characterName">Butcher</div>
+                    <div>Meeting MM</div>
+                    <div>https://duplicitylog.dreamwidth.org/2108970.html?thread=226468394#cmt226468394</div>
+                    <div class="turnCounterYou">You're up!</div>
+                    <div>88</div>
+                </div>
+                <!-- New thread -->
+                  <!-- New thread -->
+                <div class="newThread">
+                    <div class="characterName" style="background-color: rgb(241, 213, 213);">Slade</div>
+                    <div>Rose kicking ass.</div>
+                    <div>https://bakerstreet.dreamwidth.org/10783368.html?thread=4372675976#cmt4372675976</div>
+                    <div class="turnCounterThem">Their turn.</div>
+                    <div>5</div>
+                </div>
+                <!-- New thread -->
+             </div>
+            <!-- Full screen button -->
+            <br><button>View Fullscreen</button> 
+        </center>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

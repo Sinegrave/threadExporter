@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Rubik+Bubbles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Redacted+Script:wght@300;400;700&display=swap');
+
+
+#popup-content::-webkit-scrollbar {
+    display: none;
+  }
+
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    font-family: "Lato", sans-serif;
+    padding: 20px;
+    place-items: center;
+    font-size: 13px;
+    margin: auto;
+    width: 640px;
+    border: 20px solid transparent;
+    border-image: repeating-radial-gradient(
+        circle at 10px,
+        #40e0d0,
+        #c0c1ff 2px,
+        #eaff2f 4px,
+        rgb(148, 131, 211) 2px
+    )
+    1;
+}
+
+h1 {
+    font-family: "Redacted Script", serif;
+    font-size: 44px;
+    margin: auto;
+    background: linear-gradient(229deg, #eaff2f 0%, #40e0d0 22%, #c0c1ff 65%);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+.topGrid {
+    display: grid;
+    align-content: space-between;
+    align-items: center;
+    justify-items: center;
+    place-items: center;
+    grid-template-rows: repeat(1, 1fr);
+    width: 100%;
+    grid-template-rows: fit-content;
+    text-align: center;
+}
+
+.topGrid button {
+    padding: 5px;
+}
+
+.threadRow {
+    display: grid;
+    grid-template-columns: 100px 160px 80px 80px 80px 80px 80px;
+    grid-template-rows: fit-content;
+    align-content: space-between;
+    align-items: center;
+    justify-items: start;
+    place-items: center;
+    padding-bottom: 10px;
+    grid-auto-flow: row;
+}
+
+.fullTopGrid {
+    display: grid;
+    align-content: space-between;
+    align-items: center;
+    justify-items: center;
+    place-items: center;
+    grid-template-rows: repeat(1, 1fr);
+    width: 100%;
+    grid-template-rows: fit-content;
+    text-align: center;
+}
+
+.fullTopGrid button {
+   padding: 5px;
+}
+
+.fullRow {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: fit-content;
+    align-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    border-bottom: #aaa dotted 1px;
+    justify-items: center;
+    grid-auto-flow: row;
+}
+
+.fullRow div {
+    height: fit-content;
+}
+
+#popup-content {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    width: 100%;
+}
+
+#characterHub {
+    display: none;
+}
+
+.popName {
+    flex: 2;
+    padding: 5px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.popTitle {
+    display: none;
+}
+
+.popdelete {
+    flex: 1;
+}
+
+.popURL {
+    overflow: hidden;
+    flex: 2;
+}
+
+.popTurn {
+    flex: 1;
+    padding: 5px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.popTotalComments {
+    flex: 1;
+}
+
+.popDate {
+    flex: 1;
+}
+
+.loadingClass{
+    display: none;
+} 
+
+.doneClass{
+    display: none;
+}
+
+
+button {
+    border: solid 1px #aaa;
+    padding: 1%;
+    border-radius: 5px;
+    font-size: 12px;
+    background-color: #fff;
+}
+
+button:hover {
+    background-color: #A1D2CC;
+}
+
+#atlasOptionsBar {
+    display: none;
+}
+
+.newThread div {
+    width: 20%;
+    overflow: hidden;
+}

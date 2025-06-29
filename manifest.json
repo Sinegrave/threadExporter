@@ -1,0 +1,30 @@
+{
+
+    "description": "Allows threads to be tracked across journals.",
+    "manifest_version": 2,
+    "name": "DW Thread Tracker",
+    "version": "1.0.0",
+    "homepage_url": "https://github.com/Sinegrave/Atlas",
+    "icons": {
+      "48": "icons/cd.png"
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["atlas.js"]
+      }
+    ],
+
+    "permissions": [
+      "storage", "tabs"
+    ],
+    
+    "browser_action": {
+        "browser_style": true,
+        "default_icon": "icons/cd.png",
+        "default_title": "DW Thread Tracker",
+        "default_popup": "popup/popup.html"
+      }
+      
+  }
