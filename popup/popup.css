@@ -15,7 +15,7 @@ body {
     place-items: center;
     font-size: 13px;
     margin: auto;
-    width: 640px;
+    width: 280px;
     border: 20px solid transparent;
     border-image: repeating-radial-gradient(
         circle at 10px,

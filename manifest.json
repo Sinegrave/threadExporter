@@ -1,8 +1,8 @@
 {
 
-    "description": "Allows threads to be tracked across journals.",
+    "description": "Export threads as a plain text file.",
     "manifest_version": 2,
-    "name": "DW Thread Tracker",
+    "name": "DW Thread Exporter",
     "version": "1.0.0",
     "homepage_url": "https://github.com/Sinegrave/Atlas",
     "icons": {
@@ -23,7 +23,7 @@
     "browser_action": {
         "browser_style": true,
         "default_icon": "icons/cd.png",
-        "default_title": "DW Thread Tracker",
+        "default_title": "DW Thread Exporter",
         "default_popup": "popup/popup.html"
       }
       
