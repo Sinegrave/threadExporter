@@ -163,8 +163,7 @@ const queue = new Queue();
         boxes.forEach(atlasLink => {
             atlasLink.addEventListener('click', async function handleClick(event) {
             addLoader(this.id);
-            const topLevel = await goToFirstComment(this.id); // Document/XML version of the top-level
-            readTL(topLevel);
+            readTL();
             queue.print();
             addBox();
             removeLoader(this.id);
@@ -241,14 +240,14 @@ const queue = new Queue();
 
 
     /* Look at the top-level and add each username + comment pairing to the stack. */
-    function readTL(x){
-        var bread = x.getElementsByClassName("comment-content");
+    function readTL(){
+        var bread = document.getElementsByClassName("comment-content");
         console.log(bread.length);
         let i = 0;
         while (i < bread.length){        
-            const snail = x.getElementsByClassName("poster comment-poster")[i].innerHTML;
+            const snail = document.getElementsByClassName("poster comment-poster")[i].innerHTML;
             queue.enqueue(snail);
-            const katy = x.getElementsByClassName("comment-content")[i];
+            const katy = document.getElementsByClassName("comment-content")[i];
             const perry = katy.innerHTML;
             queue.enqueue(perry);
             queue.enqueue("\n \n");
@@ -256,48 +255,8 @@ const queue = new Queue();
         i++}
     }
 
-      /*  Find parent link, return a block of text from the top-most thread.  */
-      async function goToFirstComment(x){
-        var link;
-        var butterfly = [];
-        return new Promise((resolve) => {
-            createRequest(getParent(x, document));
-                function getParent(x, z){
-                    var snail = z.getElementById("comment-" + x).getElementsByClassName("link commentparent");
+    
 
-                    if (snail[0] == undefined){
-                       var grub = z.getElementById("comment-" + x).getElementsByClassName("commentpermalink")[0];
-                       var beast =  grub.getElementsByTagName("a")[0];
-                       butterfly[0] = beast.href;
-                       butterfly[1] = x;
-                    }
-                    else if (snail[0] != undefined)  {
-                        butterfly[0] = snail[0].getElementsByTagName("a")[0];
-                        
-                    }
-                return butterfly;
-            }
 
-            
-            function createRequest(x){
-                var xhttp = new XMLHttpRequest();
-                xhttp.open("GET", x[0], true);
-                xhttp.responseType = "document";
-                xhttp.onload = function(){
-                    var blockText = xhttp.response;
-                       var id = blockText.getElementsByClassName("dwexpcomment")[0].id;
-                       var breech = blockText.getElementById("comment-" + id).getElementsByClassName("link commentparent");
-                       if ( breech[0] == undefined){
-                          link = blockText;
-                          resolve(link);
-                       }
-                       else {
-                          createRequest(getParent(id, blockText));
-                       }
-                }
-                xhttp.send();
-            }
-    });
-    }
 
 
