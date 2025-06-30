@@ -7,6 +7,7 @@
  * 
  * 
  *  */
+var commentTotal;
 
 class Queue {
   constructor() {
@@ -48,7 +49,7 @@ const queue = new Queue();
  * 
  * */
 
-/* Find a comment, any comment, and add a button that says 'add to tracker'. */
+/* Find a comment, any comment, and add a button that says 'export'. */
     const comment = document.getElementsByClassName("comment");
     const bottomRow = document.getElementsByClassName("link reply first-item");
     const threadLink = document.getElementsByClassName("link commentpermalink");
@@ -165,17 +166,18 @@ const queue = new Queue();
             addLoader(this.id);
             readTL();
             queue.print();
-            addBox();
+            addBox(this.id);
             removeLoader(this.id);
         });
     });
     }
 
     /** Create a box. */
-    function addBox() {
+    function addBox(x) {
         const location = document.getElementsByClassName("separator separator-before")[1];
         const holder = document.createElement("div");
         const padder = document.createElement("div");
+        const commentCount = document.createElement("span");
         const copyButton = document.createElement("a");
         const downloadButton = document.createElement("a");
         copyButton.setAttribute("id", "theCopyButton");
@@ -188,6 +190,9 @@ const queue = new Queue();
             holder.style.height = "250px";
             holder.style.overflow ="auto";
             holder.style.marginBottom ="15px";
+            holder.style.borderRadius ="15px";
+            holder.style.border ="solid 1px black";
+            holder.style.scrollbarWidth ="none";
             var list = queue.size();
             var i = 0;
             while (i < list){
@@ -220,11 +225,16 @@ const queue = new Queue();
             downloadButton.style.color = "white";
             downloadButton.style.boxShadow = "0 1px 0 rgba(255,255,255,0.5) inset";
 
+            commentCount.innerHTML = "    " + commentTotal + " comments.";
+            commentCount.style.width = "100px";
+            commentCount.style.height = "100px";
+
             copyButton.innerHTML = "Copy to Clipboard";
             downloadButton.innerHTML = "Download";
             location.appendChild(holder);
             location.appendChild(copyButton);
             location.appendChild(downloadButton);
+            location.appendChild(commentCount);
             location.appendChild(padder);
             copyButton.addEventListener("click", copyBox);
             
@@ -243,6 +253,7 @@ const queue = new Queue();
     function readTL(){
         var bread = document.getElementsByClassName("comment-content");
         console.log(bread.length);
+        commentTotal = bread.length;
         let i = 0;
         while (i < bread.length){        
             const snail = document.getElementsByClassName("poster comment-poster")[i].innerHTML;
